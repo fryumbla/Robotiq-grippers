@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
+
   <xacro:macro name="robotiq_arg2f_base_link" params="prefix">
     <link name="${prefix}robotiq_arg2f_base_link">
       <inertial>
