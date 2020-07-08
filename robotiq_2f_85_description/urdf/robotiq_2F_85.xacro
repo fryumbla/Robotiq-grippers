@@ -3,8 +3,6 @@
   
   <xacro:include filename="$(find robotiq_2f_85_description)/urdf/robotiq_arg2f_85_model_macro.xacro" />
   <xacro:robotiq_arg2f_85 prefix=""/>
-
-	<link name="world"/>
   
   <link name="coupling_link">
     <visual>
@@ -23,13 +21,7 @@
       </geometry>
     </collision>
   </link>
-
-	<joint name="world" type="fixed">
-		<parent link="world"/>
-		<child link="coupling_link"/>
-		<origin xyz="0 0 0" rpy="0 0 0"/>
-	</joint>
-  
+ 
   <joint name="coupling_joint" type="fixed">
     <origin xyz="0 0 0.011" rpy="0 0 0"/>
     <parent link="coupling_link" />
