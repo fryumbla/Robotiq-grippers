@@ -59,8 +59,6 @@ def mainLoop(device):
     #We connect to the address received as an argument
     gripper.client.connectToDevice(device)
 
-    rospy.init_node('robotiq2FGripper')
-
     #The Gripper status is published on the topic named 'Robotiq2FGripperRobotInput'
     pub = rospy.Publisher('Robotiq2FGripperRobotInput', inputMsg.Robotiq2FGripper_robot_input)
 
@@ -83,8 +81,11 @@ def mainLoop(device):
 
       #Wait a little
       #rospy.sleep(0.05)
+      
+    rospy.spin()
             
 if __name__ == '__main__':
     try:
-        mainLoop(sys.argv[1])
+        rospy.init_node('robotiq2FGripper')
+        mainLoop(rospy.get_param('~usb'))
     except rospy.ROSInterruptException: pass

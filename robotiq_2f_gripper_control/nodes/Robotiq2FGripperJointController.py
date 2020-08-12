@@ -112,6 +112,9 @@ def publisher():
     """Main loop which requests new commands and publish them on the Robotiq2FGripperRobotOutput topic."""
     rospy.init_node('Robotiq2FGripperJointController')
     
+    command.rACT = 0
+    pub.publish(command)
+    rospy.sleep(0.1) 
     command.rACT = 1
     command.rGTO = 1
     command.rSP  = 200
@@ -125,7 +128,8 @@ def publisher():
         rospy.Subscriber('joint_states', JointState, callback)
         # command = genCommand(askForCommand(command), command)            
         # pub.publish(command)
-        rospy.sleep(0.1)
+        # rospy.sleep(0.1)
+        rospy.spin()
                         
 if __name__ == '__main__':
     publisher()
