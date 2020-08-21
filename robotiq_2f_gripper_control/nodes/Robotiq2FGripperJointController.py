@@ -114,7 +114,7 @@ def publisher():
     
     command.rACT = 0
     pub.publish(command)
-    rospy.sleep(0.1) 
+    rospy.sleep(2) 
     command.rACT = 1
     command.rGTO = 1
     command.rSP  = 200
@@ -122,7 +122,7 @@ def publisher():
 
     pub.publish(command)
 
-    rospy.sleep(0.1) 
+    rospy.sleep(0.5) 
     
     while not rospy.is_shutdown():
         rospy.Subscriber('joint_states', JointState, callback)
