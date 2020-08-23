@@ -86,6 +86,6 @@ def mainLoop():
             
 if __name__ == '__main__':
     try:
-        rospy.init_node('robotiq2FGripper')
+        rospy.init_node('robotiq3FGripper')
         mainLoop()
     except rospy.ROSInterruptException: pass
