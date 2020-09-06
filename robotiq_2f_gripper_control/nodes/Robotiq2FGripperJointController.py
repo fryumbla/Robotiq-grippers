@@ -1,10 +1,5 @@
 #!/usr/bin/env python
 
-"""@package docstring
-Command-line interface for sending simple commands to a ROS node controlling a 2F gripper.
-
-This serves as an example for publishing messages on the 'Robotiq2FGripperRobotOutput' topic using the 'Robotiq2FGripper_robot_output' msg type for sending commands to a 2F gripper.
-"""
 
 import roslib; roslib.load_manifest('robotiq_2f_gripper_control')
 import rospy
