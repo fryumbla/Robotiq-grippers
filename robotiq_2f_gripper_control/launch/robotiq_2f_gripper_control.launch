@@ -7,7 +7,7 @@
       <param name="usb" value="$(arg usb)" />
   </node>
 
-  <node pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperJointController.py" name="Robotiq2FGripperJointController" output="screen" />
+  <node pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperJointController_copy.py" name="Robotiq2FGripperJointController" output="screen" />
 
   <!-- <node pkg="industrial_robot_client" type="joint_trajectory_action" name="gripper_trajectory_action">
     <remap from="/joint_path_command" to="/Robotiq/joint_path_command"/>  

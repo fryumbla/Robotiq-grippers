@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="conveyor_gripper_model" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  
+  <link name="conveyor_gripper">
+    <visual>
+      <origin xyz="-0.117 0.045 0.393" rpy="0 3.1416 3.1416" />
+      <geometry>
+        <mesh filename="package://conveyor_gripper_description/meshes/conveyor_gripper_m.stl" />
+      </geometry>
+      <material name="">
+        <color rgba="0.1 0.1 0.1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.117 0.045 0.393" rpy="0 3.1416 3.1416" />
+      <geometry>
+          <mesh filename="package://conveyor_gripper_description/meshes/conveyor_gripper_m.stl" />
+      </geometry>
+    </collision>
+  </link>
+ 
+  <joint name="conveyor_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="tcp" />
+    <child link="conveyor_gripper" />
+  </joint>
+
+</robot>
